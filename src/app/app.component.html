@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!</h1>
+</div>
+<div *ngIf="sucessMessage">
+  <label style="color:red">
+    <strong>Success!</strong> Indicates a successful or positive action.</label
+  >
+</div>
+<h1>Products List</h1>
+<table border="2">
+  <tr>
+    <td>Product Name</td>
+    <td>Product Cost</td>
+  </tr>
+  <tr *ngFor="let product of allProducts">
+    <td>{{ product.productName }}</td>
+    <td>{{ product.cost }}</td>
+    <td><button (click)="orderItem(product)">Order Item</button></td>
+  </tr>
+</table>
+
+<h1>Total Orders</h1>
+<table border="2">
+  <tr>
+    <td>Product Name</td>
+    <td>Product Cost</td>
+    <td>Status</td>
+    <td>Quantity</td>
+  </tr>
+  <tr *ngFor="let product of userOrders">
+    <td>{{ product.productName }}</td>
+    <td>{{ product.cost }}</td>
+    <td>{{ product.status }}</td>
+    <td>{{ product.quantity }}</td>
+    <td>
+      <button (click)="cancelOrder(product.productId)">Cancel Order</button>
+    </td>
+  </tr>
+</table>
+
+<router-outlet></router-outlet>
