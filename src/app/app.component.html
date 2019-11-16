@@ -2,6 +2,8 @@
 <div style="text-align:center">
   <h1>Welcome to {{ title }}!</h1>
 </div>
+<!-- <button (click)="notify()">Show Notiication</button> -->
+
 <div *ngIf="sucessMessage">
   <label style="color:red">
     <strong>Success!</strong> Indicates a successful or positive action.</label
@@ -34,7 +36,7 @@
     <td>{{ product.status }}</td>
     <td>{{ product.quantity }}</td>
     <td>
-      <button (click)="cancelOrder(product.productId)">Cancel Order</button>
+      <button (click)="cancelOrder(product)">Cancel Order</button>
     </td>
   </tr>
 </table>
